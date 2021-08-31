@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sports Leagues</title>
+	</head>
+	<body>
+
+		<h1>Todas las ligas de béisbol</h1>
+		<ol>
+			{% for ligasBeisbol in ligasBeisbols %}
+				<li>{{ligasBeisbol.name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todas las ligas de mujeres</h1>
+		<ol>
+			{% for ligasMujer in ligasMujeres %}
+				<li>{{ligasMujer.name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todas las ligas donde el deporte es cualquier tipo de hockey</h1>
+		<ol>
+			{% for deporteHockey in deporteHockeys %}
+				<li>{{deporteHockey.name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todas las ligas donde el deporte no sea football</h1>
+		<ol>
+			{% for noFootball in noFootballs %}
+				<li>{{noFootball.name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todas las ligas que se llaman "conferencias"</h1>
+		<ol>
+			{% for nombreConferencia in nombreConferencias %}
+				<li>{{nombreConferencia.name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todas las ligas de la región atlanta</h1>
+		<ol>
+			{% for regionAtlanta in regionAtlantas %}
+				<li>{{regionAtlanta.league}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los equipos con sede en Dallas</h1>
+		<ol>
+			{% for sedeDalla in sedeDallas %}
+				<li>{{sedeDalla.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los equipos nombraron los Raptors</h1>
+		<ol>
+			{% for losRaptor in losRaptors %}
+				<li>{{losRaptor.league}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>todos los equipos cuya ubicación incluye "City"</h1>
+		<ol>
+			{% for existeCity in existeCitys %}
+				<li>{{existeCity.league}} - {{existeCity.location}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los equipos cuyos nombres comienzan con "T"</h1>
+		<ol>
+			{% for comienzaConT in comienzaConTs %}
+				<li>{{comienzaConT.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los equipos, ordenados alfabéticamente por ubicación</h1>
+		<ol>
+			{% for porUbicacion in porUbicacions %}
+				<li>{{porUbicacion.team_name}} - {{porUbicacion.location}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los equipos, ordenados por nombre de equipo en orden alfabético inverso</h1>
+		<ol>
+			{% for porEquipoInverso in porEquipoInversos %}
+				<li>{{porEquipoInverso.team_name}} - {{porEquipoInverso.location}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Cada jugador con apellido "Cooper"</h1>
+		<ol>
+			{% for apellidoCooper in apellidoCoopers %}
+				<li>{{apellidoCooper.first_name}} {{apellidoCooper.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Cada jugador con nombre "Joshua"</h1>
+		<ol>
+			{% for nombreJoshua in nombreJoshuas %}
+				<li>{{nombreJoshua.first_name}} {{nombreJoshua.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores con el apellido "Cooper" EXCEPTO aquellos con "Joshua" como primer nombre</h1>
+		<ol>
+			{% for apellidoCooperSinJoshua in apellidoCooperSinJoshuas %}
+				<li>{{apellidoCooperSinJoshua.first_name}} {{apellidoCooperSinJoshua.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores con nombre "Alexander" O nombre "Wyatt"</h1>
+		<ol>
+			{% for soloDosNombre in soloDosNombres %}
+				<li>{{soloDosNombre.first_name}} {{soloDosNombre.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Leagues</h1>
+		<ol>
+			{% for league in leagues %}
+				<li>{{league.name}}</li>
+			{% empty %}
+				<p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+		<h1>Teams</h1>
+		<ol>
+			{% for team in teams %}
+				<li>{{team.location}} {{team.team_name}}</li>
+			{% empty %}
+				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+		<h1>Players</h1>
+		<ol>
+			{% for player in players %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% empty %}
+				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+	</body>
+</html>
