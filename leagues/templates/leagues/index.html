@@ -117,6 +117,115 @@
 			{% endfor %}
 		</ol>
 
+		<h1>==========================================================================</h1>
+
+		<h1>Todos los equipos en la Atlantic Soccer Conference</h1>
+		<ol>
+			{% for enUnaLiga in enUnaLigas %}
+				<li>{{enUnaLiga.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores (actuales) en los Boston Penguins</h1>
+		<ol>
+			{% for bostonPenguin in bostonPenguins %}
+				<li>{{bostonPenguin.first_name}} {{bostonPenguin.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores (actuales) en la International Collegiate Baseball Conference</h1>
+		<ol>
+			{% for todosEnColegioInternacional in todosEnColegioInternacionals %}
+				<li>{{todosEnColegioInternacional.first_name}} {{todosEnColegioInternacional.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores (actuales) en la Conferencia Americana de Fútbol Amateur con el apellido "López"</h1>
+		<ol>
+			{% for sinLopez in sinLopezs %}
+				<li>{{sinLopez.first_name}} {{sinLopez.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores de fútbol</h1>
+		<ol>
+			{% for fullJugador in fullJugadores %}
+				<li>{{fullJugador.first_name}} {{fullJugador.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los equipos con un jugador (actual) llamado "Sophia"</h1>
+		<ol>
+			{% for soloSophia in soloSophias %}
+				<li>{{soloSophia.first_name}} {{soloSophia.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todas las ligas con un jugador (actual) llamado "Sophia"</h1>
+		<ol>
+			{% for SoloSophiaLiga in SoloSophiaLigas %}
+				<li>{{SoloSophiaLiga.name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos con el apellido "Flores" que NO (actualmente) juegan para los Washington Roughriders</h1>
+		<ol>
+			{% for apellidoFlores in apellidoFloress %}
+				<li>{{apellidoFlores.first_name}} {{apellidoFlores.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los equipos, pasados y presentes, con los que Samuel Evans ha jugado</h1>
+		<ol>
+			{% for SoloSamuel in SoloSamuels %}
+				<li>{{SoloSamuel.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores, pasados y presentes, con los gatos tigre de Manitoba</h1>
+		<ol>
+			{% for gatoTigre in gatoTigres %}
+				<li>{{gatoTigre.first_name}} {{gatoTigre.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores que anteriormente estaban (pero que no lo están) con los Wichita Vikings</h1>
+		<ol>
+			{% for noViking in noVikings %}
+				<li>{{noViking.first_name}} {{noViking.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Cada equipo para el que Jacob Gray jugó antes de unirse a los Oregon Colts</h1>
+		<ol>
+			{% for noColts in noColtss %}
+				<li>{{noColts.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos llamados "Joshua" que alguna vez han jugado en la Federación Atlántica de Jugadores de Béisbol Amateur</h1>
+		<ol>
+			{% for joshuaAtlantic in joshuaAtlantics %}
+				<li>{{joshuaAtlantic.first_name}} {{joshuaAtlantic.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los equipos que han tenido 12 o más jugadores, pasados y presentes. (SUGERENCIA: busque la función de anotación de Django).</h1>
+		<ol>
+			{% for masDeDoce in masDeDoces %}
+				<li>{{masDeDoce.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+		<h1>Todos los jugadores y el número de equipos para los que jugó, ordenados por la cantidad de equipos para los que han jugado</h1>
+		<ol>
+			{% for jugadoresTotal in jugadoresTotals %}
+				<li>{{jugadoresTotal.first_name}} {{jugadoresTotal.last_name}} ({{jugadoresTotal.num_teams}})</li>
+			{% endfor %}
+		</ol>
+
+		<h1>==========================================================================</h1>
+
 		<h1>Leagues</h1>
 		<ol>
 			{% for league in leagues %}
@@ -125,6 +234,7 @@
 				<p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
 			{% endfor %}
 		</ol>
+
 		<h1>Teams</h1>
 		<ol>
 			{% for team in teams %}
